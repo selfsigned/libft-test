@@ -6,7 +6,7 @@
 /*   By: xperrin <xperrin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/27 21:04:20 by xperrin           #+#    #+#             */
-/*   Updated: 2018/05/28 02:13:34 by xperrin          ###   ########.fr       */
+/*   Updated: 2018/05/30 20:47:03 by xperrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,13 @@ int run = 0;
 referring to as Linux, is in fact, GNU/Linux, or as I’ve recently taken \
 to calling it, GNU plus Linux."
 
-static	int		cmp_int(const void* a, const void* b) {
-	if(*(int*)a > *(int*)b)
-		return 1;
-	return 0;
+static	int cmp_int(const void *a, const void *b){
+	int *_a = (int *)a;
+	int *_b = (int *)b;
+
+	if(*_a > *_b) return -1;
+	if(*_a == *_b) return 0;
+	return 1;
 }
 
 static	int		cmp_char(const void* a, const void* b) {
